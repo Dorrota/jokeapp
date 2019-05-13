@@ -36,11 +36,12 @@ public class PersonController {
 	@RequestMapping(value="/name/{name}", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Person getOnePersonByName (@PathVariable String name) {
 		
+		log.info("/name");
+		
 		name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
 		Person fullName = personService.getPersonByName(name);
 		
 		return fullName;
-		
 	}
 	
 

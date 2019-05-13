@@ -3,6 +3,7 @@ package guru.springframework.joke.services;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
@@ -48,10 +49,11 @@ public class PersonServiceImpl implements PersonService{
 			    System.out.println(splited);
 			}
 			Person p= new Person(pers[0] , pers[1]);
-			personList.add(p);			
+			personList.add(p);
 		}
 		
 	}
+	
 	@Override
 	public List<Person> listAllPerson() {
 		return personList;
@@ -60,6 +62,7 @@ public class PersonServiceImpl implements PersonService{
 	@Override
 	public Person getPersonByName(String name) {
 		return personList.stream().filter(x-> x.getName().equals(name)).findFirst().get();
+		
 	}
 
 }
