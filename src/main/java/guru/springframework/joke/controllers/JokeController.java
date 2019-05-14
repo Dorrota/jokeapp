@@ -39,7 +39,7 @@ public class JokeController {
 	@RequestMapping("/nameList/{count}")
 	public String showNames(@PathVariable Integer count, Model model) throws Exception {
 		
-			model.addAttribute("name", jokeService.getRandomNames(count));
+		model.addAttribute("name", jokeService.getRandomNames(count));
 		return "namelist";
 	}
 	

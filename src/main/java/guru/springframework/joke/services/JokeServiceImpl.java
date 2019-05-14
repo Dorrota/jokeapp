@@ -57,6 +57,7 @@ public class JokeServiceImpl implements JokeService {
 		
 		return shortList;
 	}
+	
 	@Override
 	public String getJoke() {
 		// TODO Auto-generated method stub
